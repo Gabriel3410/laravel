@@ -14,9 +14,8 @@ class ProdutoController extends Controller
      */
     public function index(): Response
     {
-        //dd('METODO INDEX');
         $produtos = Produto::orderBy('nome', 'ASC')->get();
-        dd($produtos);
+        return view('/');
     }
 
     /**

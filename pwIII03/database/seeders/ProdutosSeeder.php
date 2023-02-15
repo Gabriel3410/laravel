@@ -24,5 +24,11 @@ class ProdutosSeeder extends Seeder
             'quantidade' => 52,
             'valor' => 35.21,
         ]);
+
+        DB::table('produtos')->insert([
+            'nome' => 'patins',
+            'quantidade' => 66,
+            'valor' => 108.21,
+        ]);
     }
 }
