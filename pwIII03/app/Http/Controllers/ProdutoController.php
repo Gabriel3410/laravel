@@ -15,7 +15,7 @@ class ProdutoController extends Controller
     public function index(): Response
     {
         $produtos = Produto::orderBy('nome', 'ASC')->get();
-        return view('/');
+        return view('/produto');
     }
 
     /**

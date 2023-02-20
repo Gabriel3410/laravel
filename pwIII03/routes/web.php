@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/produto', [ProdutoController::class,'produtos']);
+Route::get('/produtos', [ProdutoController::class,'produtos']);
