@@ -15,3 +15,5 @@ use App\Http\Controllers\PostagemController;
 */
 
 Route::get('/', [PostagemController::class, 'index']);
+
+Route::get('/create', [PostagemController::class, 'create']);

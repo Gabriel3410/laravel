@@ -18,6 +18,6 @@
     @foreach ($postagem as $values)
         <p>Postagem {{ $values->id }} - {{$values->titulo}}</p>
     @endforeach
-
-    </body>
+<a href="{{route('/create')}}">logoar</a>
+</body>
 </html>

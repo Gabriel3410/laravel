@@ -23,7 +23,8 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        //
+        $postagens = Postagem::all();
+        return view('postagem.create',['postagem'=> $postagens]);
     }
 
     /**
