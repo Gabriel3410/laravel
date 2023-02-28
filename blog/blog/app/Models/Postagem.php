@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Postagem extends Model
 {
     use HasFactory;
-    protected $table = 'postagem';
+
+    protected $table = 'postagens';
 }

@@ -6,26 +6,26 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class comentarioSeeder extends Seeder
+class ComentarioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('comentario')->insert([
+        DB::table('comentarios')->insert([
             'postagem_id' => 1,
-            'conteudo' => 'Primeira Conteudo - Primeiro Conteudo', 
+            'conteudo' => 'Primeira postagem - primeiro comentario',
         ]);
 
-        DB::table('comentario')->insert([
+        DB::table('comentarios')->insert([
+            'postagem_id' => 1,
+            'conteudo' => 'Primeira postagem - segundo comentario',
+        ]);
+
+        DB::table('comentarios')->insert([
             'postagem_id' => 2,
-            'conteudo' => 'Segundo Conteudo - Segundo Conteudo', 
-        ]);
-
-        DB::table('comentario')->insert([
-            'postagem_id' => 3,
-            'conteudo' => 'Terceiro Conteudo - Terceiro Conteudo', 
+            'conteudo' => 'Segunda postagem - primeiro comentario',
         ]);
     }
 }

@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comentario', function (Blueprint $table) {
+        Schema::create('postagens', function (Blueprint $table) {
             $table->id();
-            $table->biginteger('postagem_id');
+            $table->string('titulo');
             $table->text('conteudo');
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comentario');
+        Schema::dropIfExists('postagens');
     }
 };

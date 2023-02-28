@@ -13,19 +13,19 @@ class PostagemSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('postagem')->insert([
-            'titulo' => 'Primeira Postagem',
-            'conteudo' => 'Primeira Conteudo' 
+        DB::table('postagens')->insert([
+            'titulo' => 'Primeira postagem',
+            'conteudo' => 'Primeiro conteudo',
         ]);
 
-        DB::table('postagem')->insert([
-            'titulo' => 'Segunda Postagem',
-            'conteudo' => 'Segundo Conteudo' 
+        DB::table('postagens')->insert([
+            'titulo' => 'Segunda postagem',
+            'conteudo' => 'Segundo conteudo',
         ]);
 
-        DB::table('postagem')->insert([
-            'titulo' => 'Terceiro Postagem',
-            'conteudo' => 'Terceiro Conteudo' 
+        DB::table('postagens')->insert([
+            'titulo' => 'Terceira postagem',
+            'conteudo' => 'Terceiro conteudo',
         ]);
     }
 }

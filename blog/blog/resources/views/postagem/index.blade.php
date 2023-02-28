@@ -6,18 +6,21 @@
 
         <title>Postagens</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        Postagens:<br>
 
-       
-    </head>
-    <body>
-
-        postagens <br>
-    @foreach ($postagem as $values)
-        <p>Postagem {{ $values->id }} - {{$values->titulo}}</p>
-    @endforeach
-
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Titulo</th>
+                <th>Visualizar</th>
+            </tr>
+            @foreach ($postagens as $value)
+            <tr>
+                <td>{{ $value->id }}</td>
+                <td>{{ $value->titulo }}</td>
+                <td><a href="{{url('postagem/' . $value->id) }}">Visualizar</a></td>
+            </tr>
+            @endforeach
+        </table>
     </body>
 </html>
