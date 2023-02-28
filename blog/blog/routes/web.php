@@ -14,6 +14,9 @@ use App\Http\Controllers\PostagemController;
 |
 */
 
-Route::get('/', [PostagemController::class, 'index']);
+Route::get('/', [PostagemController::class, 'index'])
+    ->name('postagem.index');
 
-Route::get('/create', [PostagemController::class, 'create']);
+Route::get('postagem/{id}', [PostagemController::class, 'show'])
+    ->name('postagem.show');
+

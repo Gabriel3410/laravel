@@ -13,20 +13,12 @@
        
     </head>
     <body>
-    <table>
-        <p>Postagens:</p>
-        <tr>
-            <th>id</th>
-            <th>Titulo</th>
-            <th>Visualizar</th>
-        </tr>
-    @foreach ($postagem as $values)
-        <tr>
-            <td>{{ $values->id}}</td>
-            <td>{{ $values->titulo}}</td>
-            <td> <a href="{{url('postagem/'. $values->id)}}">Visualizar</a></td>
-        </tr>
-    @endforeach
-    </table>
-</body>
-</html>
+
+     <p>Postagens:<br></p>
+
+    <strong>id:</strong> {{$postagem->id}} <br>
+    <strong>Título</strong> {{$postagem->titulo}} <br>
+    <strong>Conteúdo</strong> {{$postagem->conteudo}}        
+    
+    </body>
+    </html>
