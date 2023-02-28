@@ -12,10 +12,12 @@
 
        
     </head>
-    <body class="antialiased">
+    <body>
+
         postagens <br>
     @foreach ($postagem as $values)
-        <p>Postagem {{ $values->id }}</p>
+        <p>Postagem {{ $values->id }} - {{$values->titulo}}</p>
     @endforeach
+
     </body>
 </html>
