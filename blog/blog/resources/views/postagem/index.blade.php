@@ -13,6 +13,7 @@
        
     </head>
     <body>
+    <a href="{{url('postagem/create')}}">Criar comentarios</a>
     <table>
         <p>Postagens:</p>
         <tr>
