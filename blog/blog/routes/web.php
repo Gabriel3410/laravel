@@ -20,5 +20,5 @@ Route::get('/', [PostagemController::class, 'index'])
 Route::get('postagem/{id}', [PostagemController::class, 'show'])
     ->name('postagem.show');
 
-Route::get('postagem/create', [PostagemController::class, 'create'])
+Route::get('postagem/{id}', [PostagemController::class, 'create'])
     ->name('postagem.create');
