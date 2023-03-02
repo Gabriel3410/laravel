@@ -9,10 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Postagem extends Model
 {
     use HasFactory;
-    protected $table = 'postagem';
+
+    protected $table = 'postagens';
+
 
     public function comentarios(): HasMany
     {
         return $this->hasMany(Comentario::class);
     }
+
 }

@@ -14,8 +14,7 @@ class PostagemController extends Controller
     {
         $postagens = Postagem::all();
         //dd($postagens);
-        return view('postagem.index', ['postagem' => $postagens]);
-
+        return view('postagem.index', ['postagens' => $postagens]);
     }
 
     /**
@@ -23,8 +22,7 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        $postagens = Postagem::all();
-        return view('postagem.create',['postagem'=> $postagens]);
+        //
     }
 
     /**
@@ -40,10 +38,10 @@ class PostagemController extends Controller
      */
     public function show(string $id)
     {
-        //dd($id);
+        
         $postagem = Postagem::find($id);
         //dd($postagem);
-        return view('postagem.show',['postagem'=> $postagem]);
+        return view('postagem.show', ['postagem' => $postagem]);
     }
 
     /**
