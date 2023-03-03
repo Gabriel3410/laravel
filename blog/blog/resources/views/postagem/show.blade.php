@@ -13,5 +13,11 @@
     <strong>id:</strong> {{ $postagem->id }} <br>
     <strong>Titulo:</strong> {{ $postagem->titulo }} <br>
     <strong>Conteudo:</strong> {{ $postagem->conteudo }} <br>
+    <br>
+    Comentários:<br>
+
+    @foreach ($postagem->comentarios as $value)
+        {{ $value->conteudo }}<br>
+    @endforeach
     </body>
 </html>

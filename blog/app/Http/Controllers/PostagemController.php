@@ -22,7 +22,7 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        //
+        return view('postagem.create');
     }
 
     /**
@@ -30,7 +30,11 @@ class PostagemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $postagem = new Postagem;
+        $postagem->titulo = $request->titulo;
+        $postagem->conteudo = $request->descricao;
+        $postagem->save();
     }
 
     /**
