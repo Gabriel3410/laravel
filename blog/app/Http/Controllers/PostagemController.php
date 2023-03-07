@@ -35,6 +35,8 @@ class PostagemController extends Controller
         $postagem->titulo = $request->titulo;
         $postagem->conteudo = $request->conteudo;
         $postagem->save();
+
+        return redirect()->action([PostagemController::class, 'index']);
     }
 
     /**
@@ -69,6 +71,6 @@ class PostagemController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       //
     }
 }

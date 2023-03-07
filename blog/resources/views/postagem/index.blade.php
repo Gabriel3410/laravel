@@ -18,6 +18,7 @@
         <th>id</th>
         <th>Título</th>
         <th>Visualizar</th>
+        <th>Deletar</th>
     </tr>
     @foreach ($postagens as $value)
     <tr>

@@ -17,6 +17,5 @@
         {!! Form::text('conteudo') !!}<br>
         {!! Form::submit('Enviar') !!}<br>
         {!! Form::close() !!}
- 
     </body>
 </html>
