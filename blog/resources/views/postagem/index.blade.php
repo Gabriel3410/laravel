@@ -3,34 +3,39 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style>
+            body{
+                background-color:#d9d9d9;
+            }
+        </style>
         <title>Postagens</title>
 
-        Postagens:<br>
+        <h1>Postagens:</h1><br>
 
         </head>
         <body>
 
-        <a href="{{ url('postagem/create') }}">CRIAR</a>
+    <a class="btn btn-outline-success m-2" href="{{ url('postagem/create') }}">CRIAR</a>
 
-    <table>
-    <tr>
-        <th>id</th>
-        <th>Título</th>
-        <th>Visualizar</th>
-        <th>Deletar</th>
-    </tr>
+    <table class="table table-striped table-dark">
+        <tr>
+            <th scoper="col" >id</th>
+            <th scoper="col" >Título</th>
+            <th scoper="col" >Visualizar</th>
+            <th scoper="col" >Deletar</th>
+        </tr>
     @foreach ($postagens as $value)
     <tr>
-        <td>{{ $value->id }}</td>
-        <td>{{ $value->titulo }}</td>
-        <td><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
-        <td>
+        <td class="align-middle">{{ $value->id }}</td>
+        <td class="align-middle">{{ $value->titulo }}</td>
+        <td class="align-middle"><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
+        <td class="align-middle">
             <form action="{{ url('postagem/' . $value->id) }}" method="POST" class="ms-2">
                         @csrf
                         @method('delete')
-                        <button class="btn btn-danger btn-sm"> 
-                            X
+                        <button class="btn btn-danger delete-btn"> 
+                        Deletar
                         </button>
             </form>
         </td>

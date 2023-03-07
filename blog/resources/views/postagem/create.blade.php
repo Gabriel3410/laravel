@@ -8,6 +8,7 @@
         <style>
             body{
                 text-align:center;
+                background-color:#d9d9d9;
             }
         </style>
         </head>
@@ -39,6 +40,8 @@
         </div>
         <button type="submit" class="btn btn-primary">Adicionar</button>
         </form>
+
+        <a class="btn btn-success mt-2" href="{{ route('/postagem') }}">Voltar</a>
 
 
         {{-- {!! Form::open(['url' => 'postagem/create'])!!}

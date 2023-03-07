@@ -17,9 +17,6 @@ Route::post('postagem/create', [PostagemController::class, 'store'])
 Route::delete('postagem/{id}', [PostagemController::class, 'destroy'])
 ->name('postagem.destroy');
 
-Route::resource('/series', PostagemController::class)
-    ->except(['show']);
-
 Route::get('postagem/{id}', [PostagemController::class, 'show'])
 ->name('postagem.show');
 
