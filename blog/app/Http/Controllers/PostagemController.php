@@ -71,6 +71,10 @@ class PostagemController extends Controller
      */
     public function destroy(string $id)
     {
-       //
+        
+        $postagens = Postagem::findOrFail($id);
+        $postagens->delete();
+        return redirect()->action([PostagemController::class, 'index']);
+        
     }
 }
