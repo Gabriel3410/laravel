@@ -10,38 +10,42 @@
             }
         </style>
         <title>Postagens</title>
-
+    </head>
+    <body>
         <h1>Postagens:</h1><br>
 
-        </head>
-        <body>
+        <a class="btn btn-outline-success m-2" href="{{ url('postagem/create') }}">CRIAR</a>
 
-    <a class="btn btn-outline-success m-2" href="{{ url('postagem/create') }}">CRIAR</a>
-
-    <table class="table table-striped table-dark">
+        <table class="table table-striped table-dark">
+            <tr>
+                <th scoper="col" >id</th>
+                <th scoper="col" >Título</th>
+                <th scoper="col" >Visualizar</th>
+                <th scoper="col">Editar</th>
+                <th scoper="col" >Deletar</th>
+            </tr>
+        @foreach ($postagens as $value)
         <tr>
-            <th scoper="col" >id</th>
-            <th scoper="col" >Título</th>
-            <th scoper="col" >Visualizar</th>
-            <th scoper="col" >Deletar</th>
+            <td class="align-middle">{{ $value->id }}</td>
+            <td class="align-middle">{{ $value->titulo }}</td>
+            <td class="align-middle"><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
+            <td class="align-middle">
+                <button class="btn btn-success">
+                <a href="#">Editar</a>
+                </button>
+            </td>    
+            <td class="align-middle">
+                <form action="{{ url('postagem/' . $value->id) }}" method="POST" class="ms-2">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger delete-btn"> 
+                            Deletar
+                            </button>
+                </form>
+            </td>
         </tr>
-    @foreach ($postagens as $value)
-    <tr>
-        <td class="align-middle">{{ $value->id }}</td>
-        <td class="align-middle">{{ $value->titulo }}</td>
-        <td class="align-middle"><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
-        <td class="align-middle">
-            <form action="{{ url('postagem/' . $value->id) }}" method="POST" class="ms-2">
-                        @csrf
-                        @method('delete')
-                        <button class="btn btn-danger delete-btn"> 
-                        Deletar
-                        </button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
-    </table>
+        @endforeach
+        </table>
 
-    </body>
+</body>
 </html>
