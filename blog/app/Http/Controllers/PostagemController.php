@@ -55,7 +55,8 @@ class PostagemController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $postagem= Postagem::find($id);
+        return view('postagem.edit')->with('postagem', $postagem);
     }
 
     /**
@@ -63,7 +64,12 @@ class PostagemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $postagem->fill($request->all());
+
+        $postagem->save();
+
+        return to_route('postagem.index')
+            ->with('mensagem.sucesso', "Postagem '{$postagem->titulo}' atualizada com sucesso");
     }
 
     /**

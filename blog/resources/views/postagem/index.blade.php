@@ -31,7 +31,7 @@
             <td class="align-middle"><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
             <td class="align-middle">
                 <button class="btn btn-success">
-                <a href="#">Editar</a>
+                <a href="{{ url('postagem/edit', $value->id)}}">Editar</a>
                 </button>
             </td>    
             <td class="align-middle">
