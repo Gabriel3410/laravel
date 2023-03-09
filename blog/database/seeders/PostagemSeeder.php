@@ -13,7 +13,7 @@ class PostagemSeeder extends Seeder
      */
     public function run(): void
     {
-        /*DB::table('postagens')->insert([
+        DB::table('postagens')->insert([
             'titulo' => 'Primeira postagem',
             'conteudo' => 'Primeiro conteudo',
         ]);
@@ -26,6 +26,6 @@ class PostagemSeeder extends Seeder
         DB::table('postagens')->insert([
             'titulo' => 'Terceira postagem',
             'conteudo' => 'Terceiro conteudo',
-        ]);*/
+        ]);
     }
 }
