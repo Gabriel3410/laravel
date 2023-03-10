@@ -8,7 +8,7 @@ use App\Http\Controllers\PostagemController;
 Route::get('/', [PostagemController::class, 'index'])
 ->name('/postagem');
 
-Route::get('postagem/edit/{id}', [PostagemController::class, 'edit'])
+Route::get('postagem/{id}/edit', [PostagemController::class, 'edit'])
 ->name('postagem.edit');
 
 Route::put('postagem/{id}', [PostagemController::class, 'update'])

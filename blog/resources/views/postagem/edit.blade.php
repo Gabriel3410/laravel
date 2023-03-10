@@ -14,7 +14,7 @@
     <title>Editar a postagem</title>
 </head>
 <body>
-<form action="#" method="post">
+<form action="{{ url('postagem/'. $postagem->id) }}" method="post">
         @csrf   
         @method('PUT')
         <div class="row mb-3">

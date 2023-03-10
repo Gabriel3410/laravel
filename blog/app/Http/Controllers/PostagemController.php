@@ -56,7 +56,7 @@ class PostagemController extends Controller
     public function edit(string $id)
     {
         $postagem= Postagem::find($id);
-        return view('postagem.edit')->with('postagem', $postagem);
+        return view('postagem.edit', ['postagem' => $postagem]);
     }
 
     /**
@@ -64,12 +64,18 @@ class PostagemController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $postagem->fill($request->all());
 
-        $postagem->save();
+       $validated= $request->validate([
+        'titulo' => 'required|min:5',
+        'conteudo' => 'required|min:5',
+       ]);
 
-        return to_route('postagem.index')
-            ->with('mensagem.sucesso', "Postagem '{$postagem->titulo}' atualizada com sucesso");
+       $postagem = Postagem::find($id);
+       $postagem->titulo = $request->titulo;
+       $postagem->conteudo = $request->conteudo;
+       $postagem->save();
+
+       return redirect()->action([PostagemController::class, 'index'])->with('status', 'Postagem atualizada com sucesso');
     }
 
     /**
