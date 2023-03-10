@@ -14,9 +14,9 @@
     <body>
         <h1>Postagens:</h1><br>
 
-        <a class="btn btn-outline-success m-2" href="{{ url('postagem/create') }}">CRIAR</a>
+        <a class="btn btn-outline-success ml-01" href="{{ url('postagem/create') }}">CRIAR</a>
 
-        <table class="table table-striped table-dark">
+        <table class="table table-striped table-dark container-sm">
             <tr>
                 <th scoper="col" >id</th>
                 <th scoper="col" >Título</th>

@@ -14,32 +14,15 @@
     <title>Editar a postagem</title>
 </head>
 <body>
-<form action="{{ url('postagem/'. $postagem->id) }}" method="post">
-        @csrf   
-        @method('PUT')
-        <div class="row mb-3">
-              
-            <div class="form-group">
-                <label for="titulo" class="form-label">titulo:</label>
-                <input type="text"
-                    autofocus
-                    name="titulo" 
-                    id="titulo" 
-                    class="form-control" 
-                    value="{{ ($postagem->titulo) }}">
-            </div>
 
-            <div class="form-group">
-                <label for="conteudo" class="form-label">Conteudo</label>
-                <input type="text"
-                    name="conteudo" 
-                    id="conteudo" 
-                    class="form-control" 
-                    value="{{ ($postagem->conteudo) }}">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Alterar</button>
-        </form>
+
+        {!! Form::open(['url' => 'postagem/'. $postagem->id, 'method'=>'put'])!!}
+                {!! Form::label('titulo', 'Titulo')!!}<br>
+                {!! Form::text('titulo', $postagem->titulo)!!}<br>
+                {!! Form::label('conteudo', 'Conteudo')!!}<br>
+                {!! Form::text('conteudo', $postagem->conteudo)!!}<br>
+                {!! Form::submit('enviar')!!}<br>
+                {!! Form::close()!!} 
 
         <a class="btn btn-success mt-2" href="{{ route('/postagem') }}">Voltar</a>
 </body>

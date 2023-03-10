@@ -15,41 +15,22 @@
         <body>
  
         CRIAR:<br>
-        <form action="{{ route('postagem.store') }}" method="post">
-        @csrf   
-        <div class="row mb-3">
-              
-            <div class="form-group">
-                <label for="titulo" class="form-label">titulo:</label>
-                <input type="text"
-                    autofocus
-                    name="titulo" 
-                    id="titulo" 
-                    class="form-control" 
-                    value="{{ old('titulo') }}">
-            </div>
+        
 
+         
+
+        <div class="row mb-3">
             <div class="form-group">
-                <label for="conteudo" class="form-label">Conteudo</label>
-                <input type="text"
-                    name="conteudo" 
-                    id="conteudo" 
-                    class="form-control" 
-                    value="{{ old('conteudo') }}">
+                {!! Form::open(['url' => 'postagem/create'])!!}
+                {!! Form::label('titulo', 'Titulo')!!}<br>
+                {!! Form::text('titulo')!!}<br>
+                {!! Form::label('conteudo', 'Conteudo')!!}<br>
+                {!! Form::text('conteudo')!!}<br>
+                {!! Form::submit('enviar')!!}<br>
+                {!! Form::close()!!} 
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-        </form>
 
         <a class="btn btn-success mt-2" href="{{ route('/postagem') }}">Voltar</a>
-
-
-        {{-- {!! Form::open(['url' => 'postagem/create'])!!}
-        {!! Form::label('titulo', 'Titulo')!!}<br>
-        {!! Form::text('titulo')!!}<br>
-        {!! Form::label('conteudo', 'Conteudo')!!}<br>
-        {!! Form::text('conteudo')!!}<br>
-        {!! Form::submit('enviar')!!}<br>
-        {!! Form::close()!!} --}}
     </body>
 </html>
