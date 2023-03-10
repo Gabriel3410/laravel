@@ -75,7 +75,7 @@ class PostagemController extends Controller
        $postagem->conteudo = $request->conteudo;
        $postagem->save();
 
-       return redirect()->action([PostagemController::class, 'index'])->with('status', 'Postagem atualizada com sucesso');
+       return redirect()->action([PostagemController::class, 'index']);
     }
 
     /**
