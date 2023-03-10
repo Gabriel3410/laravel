@@ -28,11 +28,9 @@
         <tr>
             <td class="align-middle">{{ $value->id }}</td>
             <td class="align-middle">{{ $value->titulo }}</td>
-            <td class="align-middle"><a href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
+            <td class="align-middle"><a style=text-decoration:none; class="link-info" href="{{ url('postagem/' . $value->id) }}">Visualizar</a></td>
             <td class="align-middle">
-                <button class="btn btn-success">
-                <a href="{{url('postagem/' . $value->id . '/edit')}}">Editar</a>
-                </button>
+                <a style=text-decoration:none; class="link-success " href="{{url('postagem/' . $value->id . '/edit')}}">Editar</a>
             </td>    
             <td class="align-middle">
                 <form action="{{ url('postagem/' . $value->id) }}" method="POST" class="ms-2">
