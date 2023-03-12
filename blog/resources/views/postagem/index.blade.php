@@ -12,7 +12,7 @@
         <title>Postagens</title>
     </head>
     <body>
-        <h1>Postagens:</h1><br>
+        <h1>Suas Postagens:</h1><br>
 
         <a class="btn btn-outline-success ml-01" href="{{ url('postagem/create') }}">CRIAR</a>
 
