@@ -56,3 +56,12 @@ EDIT
         </div>
         <button type="submit" class="btn btn-primary">Alterar</button>
         </form>
+
+
+
+        instalando breeze via composer
+        --> composer require laravel/breeze --dev
+
+        instalando brezze via artisan
+
+        --> php artisan brezze:install
