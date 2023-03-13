@@ -14,7 +14,7 @@
     <body>
         <h1>Suas Postagens:</h1><br>
 
-        <a class="btn btn-outline-success ml-01" href="{{ url('postagem/create') }}">CRIAR</a>
+        <a class="btn btn-success " href="{{ url('postagem/create') }}">CRIAR</a>
 
         <table class="table table-striped table-dark container-sm">
             <tr>
