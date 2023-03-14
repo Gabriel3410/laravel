@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostagemController;
-
+use App\Http\Controllers\ComentarioController;
 
 
 Route::get('/', [PostagemController::class, 'index'])
@@ -25,4 +25,6 @@ Route::delete('postagem/{id}', [PostagemController::class, 'destroy'])
 
 Route::get('postagem/{id}', [PostagemController::class, 'show'])
 ->name('postagem.show'); 
+
+
 
