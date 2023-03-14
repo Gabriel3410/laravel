@@ -22,7 +22,7 @@ class PostagemController extends Controller
      */
     public function create()
     {
-        return view('profile.create');
+        return view('postagem.create');
     }
 
     /**

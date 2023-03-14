@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostagemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,8 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 /* Rotas postagens */
-Route::get('profile', function(){
-    return view('profile.create');
-});
+Route::get('profile/create', [ProfileController::class, 'create'])
+->name('profile.create');
 /* final */
 
 Route::get('/', function () {
