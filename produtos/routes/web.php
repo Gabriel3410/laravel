@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// ---------------------------------------------- Rota Produto ------------------------------------------//
 
 // pagina inicial//
 Route::get('/produto', [ProdutoController::class, 'index']) 
@@ -42,3 +46,38 @@ Route::put('/produto/{id}', [ProdutoController::class, 'update'])
 //DELETE//
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])
 ->name('produto.destroy');
+
+// ---------------------------------------------- Rota Produto ------------------------------------------//
+
+// ---------------------------------------------- Rota Categoria ----------------------------------------//
+
+// pagina inicial//
+Route::get('/categoria', [CategoriaController::class, 'index']) 
+->name('categoria.index');
+
+//CREATE//
+//Criação do formulário//
+Route::get('/categoria/create', [CategoriaController::class, 'create'])
+->name('categoria.create');
+
+//Salvar o formulário//
+Route::post('/categoria/create', [CategoriaController::class, 'store'])
+->name('categoria/store');
+
+Route::get('/categoria/{id}', [CategoriaController::class ,'show'])
+->name('categoria.show');
+
+//EDIT//
+// Exibição do formulário com os dados do recurso //
+Route::get('/categoria/{id}/edit', [CategoriaController::class, 'edit'])
+->name('categoria.edit');
+
+//Atualiza os dados do recurso passados pelo Formulário //
+Route::put('/categoria/{id}', [CategoriaController::class, 'update'])
+->name('categoria.update');
+
+//DELETE//
+Route::delete('/categoria/{id}', [CategoriaController::class, 'destroy'])
+->name('categoria.destroy');
+
+// ---------------------------------------------- Rota Categoria ----------------------------------------//

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>Produto {{$produto->nome}}</title>
+        <title>Produto {{$categoria->nome}}</title>
         <style>
             body{
                 text-align:center;
@@ -14,11 +14,9 @@
         </head>
         <body>
  
-        <h1>Produto: {{$produto->nome}}</h1>
+        <h1>Produto: {{$categoria->nome}}</h1>
 
-        <b>Categoria:</b> {{ $produto->categoria->nome }} <br>
-        <b>Quantidade:</b> {{ $produto->quantidade }} <br>
-        <b>Valor:</b> {{ $produto->valor }} <br>
+        <b>Nome:</b> {{ $categoria->nome }} <br>
         <br><br>    
 
         <a class="btn btn-success mt-2" href="{{ route('produto.index') }}">Voltar</a>

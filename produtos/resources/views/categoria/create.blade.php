@@ -22,15 +22,9 @@
 
     <div class="row mb-3">
         <div class="form-row">
-            {!! Form::open(['url' => 'produto/create'])!!}
-            {!! Form::label('categoria', 'Categoria:')!!}<br>
-            {!! Form::select('categoria_id', $categorias) !!}<br>
+            {!! Form::open(['url' => 'categoria/create'])!!}
             {!! Form::label('nome', 'Nome:')!!}<br>
             {!! Form::text('nome')!!}<br>
-            {!! Form::label('quantidade', 'Quantidade:')!!}<br>
-            {!! Form::text('quantidade')!!}<br>
-            {!! Form::label('valor', 'valor:')!!}<br>
-            {!! Form::text('valor')!!}
             {!! Form::submit('enviar')!!}<br>
             {!! Form::close()!!} 
         </div>

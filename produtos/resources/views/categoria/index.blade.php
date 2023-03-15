@@ -11,7 +11,7 @@
 <body>
     <h1>Produtos:</h1>
 
-    <a class="btn btn-success mb-1" href="{{ url('produto/create') }}">CRIAR</a>
+    <a class="btn btn-success " href="{{ url('categoria/create') }}">CRIAR</a>
 
     @if (session('status'))
         <div class="alert alert-successes">
@@ -21,24 +21,18 @@
 
     <table class="table table-striped table-dark">
         <tr>
-            <th>Categoria</th>
             <th>Nome</th>
-            <th>Quantidade</th>
-            <th>Valor</th>
             <th>Visualiazar</th>
             <th>Editar</th>
             <th>Deletar</th>
         </tr>
-        @foreach ($produto as $item)
+        @foreach ($categoria as $item)
             <tr>
-                <td>{{ $item->categoria->nome}}</td>
                 <td>{{ $item->nome}}</td>
-                <td>{{ $item->quantidade}}</td>
-                <td>R${{ $item->valor}}</td>
-                <td><a class="btn btn-success " href="{{ url('produto/'. $item->id)}}">Visualizar</a></td>
-                <td><a class="btn btn-success " href="{{ url('produto/'. $item->id . '/edit')}}">Editar</a></td>
+                <td><a class="btn btn-success " href="{{ url('categoria/'. $item->id)}}">Visualizar</a></td>
+                <td><a class="btn btn-success " href="{{ url('categoria/'. $item->id . '/edit')}}">Editar</a></td>
                 <td>
-                    {!! Form::open(['url' => 'produto/'. $item->id, 'method' => 'delete']) !!}
+                    {!! Form::open(['url' => 'categoria/'. $item->id, 'method' => 'delete']) !!}
                         {!! Form::submit('Excluir')!!}
                     {!! Form::close() !!}
                 </td>

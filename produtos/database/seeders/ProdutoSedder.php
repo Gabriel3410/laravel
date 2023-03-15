@@ -14,27 +14,38 @@ class ProdutoSedder extends Seeder
     public function run(): void
     {
         DB::table('produtos')->insert([
+            'categoria_id' => 1,
             'nome' => 'Detergente',
             'quantidade' => 15,
             'valor' => 2.90
         ]);
 
         DB::table('produtos')->insert([
+            'categoria_id' => 1,
             'nome' => 'Alvejante',
             'quantidade' => 15,
             'valor' => 2.90
         ]);
 
         DB::table('produtos')->insert([
+            'categoria_id' => 2,
             'nome' => 'Palha de aço',
             'quantidade' => 15,
             'valor' => 2.90
         ]);
 
         DB::table('produtos')->insert([
+            'categoria_id' => 1,
             'nome' => 'Sabão em pedra',
             'quantidade' => 15,
             'valor' => 2.90
+        ]);
+
+        DB::table('produtos')->insert([
+            'categoria_id' => 2,
+            'nome' => 'Filtro de barro',
+            'quantidade' => 15,
+            'valor' => 500,
         ]);
     }
 }
