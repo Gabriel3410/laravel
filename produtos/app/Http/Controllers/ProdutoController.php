@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use PhpParser\Node\Expr\New_;
 
 class ProdutoController extends Controller
 {
@@ -12,8 +13,8 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::orderBy('nome')->get();
-        return view('produto.index', ['produto' => $produtos]);
+        $produto = Produto::orderBy('nome')->get();
+        return view('produto.index', ['produto' => $produto]);
     }
 
     /**
@@ -21,7 +22,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+        return view('produto.create');
     }
 
     /**
@@ -29,7 +30,20 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'nome'=> 'required|min:5',
+            'quantidade'=>'required|integer',
+            'valor'=>'required'
+        ]);
+
+        $produto = new Produto;
+        $produto->nome = $request->nome;
+        $produto->quantidade = $request->quantidade;
+        $produto->valor = $request->valor;
+        $produto->save();
+
+        return redirect('/produto')->with('status', 'Produto Adicionado com sucesso!');
+
     }
 
     /**
@@ -46,7 +60,8 @@ class ProdutoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $produto = Produto::find($id);
+        return view('produto.edit', ['produto'=> $produto]);
     }
 
     /**
@@ -54,7 +69,19 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'nome'=> 'required|min:5',
+            'quantidade'=>'required|integer',
+            'valor'=>'required'
+        ]);
+
+        $produto = Produto::find($id);
+        $produto->nome = $request->nome;
+        $produto->quantidade = $request->quantidade;
+        $produto->valor = $request->valor;
+        $produto->save();
+
+        return redirect('/produto')->with('status', 'Produto Atualizado com sucesso!');
     }
 
     /**
@@ -62,6 +89,9 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $produto = Produto::find($id);
+        $produto->delete();
+        return redirect('/produto')->with('status', 'Produto: '.  $produto->nome. ' Deletado com sucesso!');
+
     }
 }

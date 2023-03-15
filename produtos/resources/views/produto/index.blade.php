@@ -11,20 +11,35 @@
 <body>
     <h1>Produtos:</h1>
 
-    <a href="{{ url('produto.create')}}">Criar</a>
+    <a class="btn btn-success " href="{{ url('produto/create') }}">CRIAR</a>
+
+    @if (session('status'))
+        <div class="alert alert-successes">
+            {{session('status')}}
+        </div>
+    @endif
+
     <table class="table table-striped table-dark">
         <tr>
             <th>Nome</th>
             <th>Quantidade</th>
             <th>Valor</th>
             <th>Visualiazar</th>
+            <th>Editar</th>
+            <th>Deletar</th>
         </tr>
         @foreach ($produto as $item)
             <tr>
                 <td>{{ $item->nome}}</td>
                 <td>{{ $item->quantidade}}</td>
-                <td>{{ $item->valor}}</td>
-                <td><a href="{{ url('produto/'. $item->id)}}">Visualizar</a></td>
+                <td>R${{ $item->valor}}</td>
+                <td><a class="btn btn-success " href="{{ url('produto/'. $item->id)}}">Visualizar</a></td>
+                <td><a class="btn btn-success " href="{{ url('produto/'. $item->id . '/edit')}}">Editar</a></td>
+                <td>
+                    {!! Form::open(['url' => 'produto/'. $item->id, 'method' => 'delete']) !!}
+                        {!! Form::submit('Excluir')!!}
+                    {!! Form::close() !!}
+                </td>
             </tr>
         @endforeach
     </table>

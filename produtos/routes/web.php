@@ -14,12 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', [ProdutoController::class, 'index']) 
+// pagina inicial//
+Route::get('/produto', [ProdutoController::class, 'index']) 
 ->name('produto.index');
+
+//CREATE//
+//Criação do formulário//
+Route::get('/produto/create', [ProdutoController::class, 'create'])
+->name('produto.create');
+
+//Salvar o formulário//
+Route::post('/produto/create', [ProdutoController::class, 'store'])
+->name('produto/store');
 
 Route::get('/produto/{id}', [ProdutoController::class ,'show'])
 ->name('produto.show');
 
-Route::get('/produto/create', [ProdutoController::class, 'create'])
-->name('produto.create');
+//EDIT//
+// Exibição do formulário com os dados do recurso //
+Route::get('/produto/{id}/edit', [ProdutoController::class, 'edit'])
+->name('produto.edit');
+
+//Atualiza os dados do recurso passados pelo Formulário //
+Route::put('/produto/{id}', [ProdutoController::class, 'update'])
+->name('produto.update');
+
+//DELETE//
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy'])
+->name('produto.destroy');
