@@ -10,6 +10,8 @@
 </head>
 <body>
     <h1>Produtos:</h1>
+
+    <a href="{{ url('produto.create')}}">Criar</a>
     <table class="table table-striped table-dark">
         <tr>
             <th>Nome</th>
