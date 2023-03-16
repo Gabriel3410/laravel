@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// ---------------------------------------------- Rota Produto ------------------------------------------//
+// ---------------------------------------------- Rotas Produto ------------------------------------------//
 
 // pagina inicial//
 Route::get('/produto', [ProdutoController::class, 'index']) 
