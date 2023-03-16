@@ -9,8 +9,9 @@
 
 </head>
 <body>
+    
+<div class="container">
     <h1>Produtos:</h1>
-
     <a class="btn btn-success mb-1" href="{{ url('produto/create') }}">CRIAR</a>
 
     @if (session('status'))
@@ -45,5 +46,6 @@
             </tr>
         @endforeach
     </table>
+</div>    
 </body>
 </html>
