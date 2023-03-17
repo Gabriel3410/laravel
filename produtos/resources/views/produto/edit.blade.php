@@ -13,7 +13,7 @@
     <title>Edição do produto: {{$produto->nome}}</title>
 </head>
 <body>    
-        <h1 class="centered">Alterar Produto: {{$produto->nome}}</h1>
+        <h1 class="font-monospace">Alterar Produto: {{$produto->nome}}</h1>
         <div class="form-group">
             {!! Form::open(['url' => 'produto/'. $produto->id, 'method'=>'put'])!!}
 
