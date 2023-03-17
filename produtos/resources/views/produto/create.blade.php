@@ -25,17 +25,18 @@
     <div class="row mb-3">
         <div class="form-row">
             {!! Form::open(['url' => 'produto/create'])!!}
-            {!! Form::label('categoria', 'Categoria:')!!}<br>
+            {!! Form::label('categoria', 'Categoria:' , ['class'=> 'form-label'])!!}<br>
             {!! Form::select('categoria_id', $categorias) !!}<br>
-            {!! Form::label('nome', 'Nome:')!!}<br>
+            {!! Form::label('nome', 'Nome:', ['class'=> 'form-label'])!!}<br>
             {!! Form::text('nome')!!}<br>
-            {!! Form::label('quantidade', 'Quantidade:')!!}<br>
+            {!! Form::label('quantidade', 'Quantidade:' , ['class'=> 'form-label'])!!}<br>
             {!! Form::text('quantidade')!!}<br>
-            {!! Form::label('valor', 'valor:')!!}<br>
+            {!! Form::label('valor', 'valor:' ,['class'=> 'form-label'])!!}<br>
             {!! Form::text('valor')!!}
-            {!! Form::submit('enviar')!!}<br>
+            {!! Form::submit('enviar',[ 'class' =>'btn btn-danger'])!!}<br>
             {!! Form::close()!!} 
         </div>
     </div>
+    <a class="btn btn-success mt-2" href="{{ route('produto.index') }}">Voltar</a>
 </body>
 </html>

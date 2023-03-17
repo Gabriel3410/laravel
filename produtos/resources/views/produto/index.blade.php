@@ -40,7 +40,7 @@
                 <td><a class="btn btn-warning " href="{{ url('produto/'. $item->id . '/edit')}}">Editar</a></td>
                 <td>
                     {!! Form::open(['url' => 'produto/'. $item->id, 'method' => 'delete']) !!}
-                        {!! Form::submit('Excluir')!!}
+                    {!! Form::submit('Excluir', ['class' => 'btn btn-danger'])!!}    
                     {!! Form::close() !!}
                 </td>
             </tr>
