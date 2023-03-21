@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+@extends('adminlte::page')
 
-    <title>Adicionar produto</title>
-</head>
-<body>
+@section('content')
     <h1>Olá</h1>
 
     @if($errors->any())
@@ -38,5 +30,4 @@
         </div>
     </div>
     <a class="btn btn-success mt-2" href="{{ route('produto.index') }}">Voltar</a>
-</body>
-</html>
+@endsection
