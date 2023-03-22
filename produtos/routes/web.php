@@ -18,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 // ---------------------------------------------- Rotas Produto ------------------------------------------//
 
+Route::get('/', function () {
+
+    return view('welcome');
+  
+    });
 // pagina inicial//
 Route::get('/produto', [ProdutoController::class, 'index']) 
 ->name('produto.index');
