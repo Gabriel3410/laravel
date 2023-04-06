@@ -29,7 +29,7 @@
                 <td>{{ $item->quantidade}}</td>
                 <td>R${{ $item->valor}}</td>
                 <td><a class="btn btn-light " href="{{ url('produto/'. $item->id)}}">Visualizar</a></td>
-                <td><a class="btn btn-warning " href="{{ url('produto/'. $item->id . '/edit')}}">Editar</a></td>
+                <td><a class="btn btn-warning" href="{{ url('produto/'. $item->id . '/edit')}}">Editar</a></td>
                 <td>
                     {!! Form::open(['url' => 'produto/'. $item->id, 'method' => 'delete']) !!}
                     {!! Form::submit('Excluir', ['class' => 'btn btn-danger'])!!}    
